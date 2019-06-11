@@ -1,7 +1,7 @@
 var notes = [ 60, 64, 67, 72, 76, 79, 84, 88, 91, 96 ];
 var notes2 = [ 62, 67, 67, 74, 77, 81, 83, 86, 89, 94 ];
 
-var pic_border = 0.001;
+var pic_border = 0.01;
 var w_hole;
 var holes;
 
@@ -74,7 +74,7 @@ var Hole = function(i) {
 		// draw
 		var hcolor = map(this.score, 0, 1, 255, 0);
 		push();
-		stroke(0);
+		stroke(128, 128, 128);
 		translate(width * pic_border + w_hole * i + w_hole / 2, height / 2);
 		rectMode(CENTER);
 		if (mouseIsPressed != true) {
@@ -84,6 +84,7 @@ var Hole = function(i) {
 		}
 		rect(0, 0, w_hole, height * 0.99);
 		fill(0);
+		stroke(0);
 		textAlign(CENTER);
 		text(this.i + 1, 0, 0);
 		pop();
@@ -143,7 +144,7 @@ function initGui() {
   var gui = QuickSettings
     .create(0, 0, 'Digimonica')
     .setDraggable(false)
-    .addHTML('Что это', 'Виртуальная до-мажорная губная гармошка.')
+    .addHTML('Что это', 'Виртуальная до-мажорная губная гормоника.')
     .addHTML('Управление', '<li>ЛКМ - выдох</li><li>ПКМ - вдох</li><li>Горизонтальная ось - высота ноты</li><li>Вертикальная ось - количество нот</li>')
   var defaultValues = gui.getValuesAsJSON();
 }
